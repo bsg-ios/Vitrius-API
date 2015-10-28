@@ -3,78 +3,173 @@ HOST: http://polls.apiblueprint.org/
 
 # Vitrius
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Vitrius API specification
 
-## Questions Collection [/questions]
+## Questions Collection [/events]
 
 ### List All Questions [GET]
 
+Get all events.
+
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "data": [
+                {
+                    "type": "Ownership",
+                    "status": "Normal",
+                    "date": {
+                        "timestamp": 1446046162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "subtype": "Distribution",
+                    "title": "Title of the event",
+                    "amounts": [
+                        {
+                            "currency": "$ USD",
+                            "value": 1234.23
+                        },
+                        {
+                            "currency": "$ USD",
+                            "value": 1234.23
+                        }
+                    ],
+                    "eventDate": {
+                        "timestamp": 1446046162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "documentsNumber": 5
+                },
+                {
+                    "type": "Ownership",
+                    "status": "New",
+                    "date": {
+                        "timestamp": 1446146162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "subtype": "Capital drawdown",
+                    "title": "Title of the event",
+                    "amounts": [
+                        {
+                            "currency": "$ USD",
+                            "value": 1234.23
+                        },
+                        {
+                            "currency": "$ USD",
+                            "value": 1234.23
+                        }
+                    ],
+                    "payDate": {
+                        "timestamp": 1446946162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "account": {
+                        "iban": "NL62 10020 8900 0190 0000",
+                        "swift": "VITEDERR488"
+                    }
+                },
+                {
+                    "type": "Ownership",
+                    "status": "Cancelled",
+                    "date": {
+                        "timestamp": 1446146162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "subtype": "Performance update",
+                    "title": "Title of the event",
+                    "amounts": [
+                        {
+                            "currency": "$ USD",
+                            "value": 1234.23
+                        },
+                        {
+                            "currency": "$ USD",
+                            "value": 1234.23
+                        }
+                    ],
+                    "eventDate": {
+                        "timestamp": 1446046162,
+                        "timezone": "Europe/Warsaw"
+                    }
+                },
+                {
+                    "type": "Voting",
+                    "status": "Live",
+                    "date": {
+                        "timestamp": 1446146162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "title": "Title of the event",
+                    "eventDate": {
+                        "timestamp": 1446046162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "label": "attend",
+                    "locationName": "HQs",
+                    "address": [
+                        "Herengracht 180",
+                        "1016BR Amsterdam",
+                        "Netherlands"
+                    ],
+                    "documentsNumber": 5
+                },
+                {
+                    "type": "Voting Results",
+                    "status": "Normal",
+                    "date": {
+                        "timestamp": 1446146162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "title": "Resolution",
+                    "eventDate": {
+                        "timestamp": 1446046162,
+                        "timezone": "Europe/Warsaw"
+                    }
+                },
+                {
+                    "type": "Reporting",
+                    "status": "Normal",
+                    "date": {
+                        "timestamp": 1446146162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "title": "Event title",
+                    "documentsNumber": 5
+                },
+                {
+                    "type": "Ownership",
+                    "status": "Normal",
+                    "date": {
+                        "timestamp": 1446146162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "subtype": "Position",
+                    "title": "Your position has been changed"
+                },
+                {
+                    "type": "Data Room",
+                    "status": "Normal",
+                    "date": {
+                        "timestamp": 1446146162,
+                        "timezone": "Europe/Warsaw"
+                    },
+                    "documentsNumber": 4
+                }
+            ],
+            "errors": null
         }
 
-+ Response 201 (application/json)
 
-    + Headers
++ Response 400 (application/json) 
 
-            Location: /questions/2
+        {
+            "data" : null,
+            "errors" : [
+                {
+                    "code" : 123,
+                    "message" : "Invalid parameters."
+                }
+            ]
+        }
+        
 
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
