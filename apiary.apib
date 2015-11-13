@@ -16,47 +16,56 @@ Get all events.
         {
             "data": [
                 {
-                    "type": "Ownership",
-                    "status": "Normal",
+                    "type": "ownership",
+                    "subtype": "distribution",
+                    "status": "accepted",
                     "date": {
                         "timestamp": 1446046162,
                         "timezone": "Europe/Warsaw"
                     },
-                    "subtype": "Distribution",
-                    "title": "Title of the event",
+                    "name": "Title of the event",
                     "amounts": [
                         {
+                            "name": "distribution", // Just example, I think we should use everywhere codes as we gonna also make translation to other languages in future
+                            "type": "currency",
                             "currency": "$ USD",
                             "value": 1234.23
                         },
                         {
-                            "currency": "$ USD",
-                            "value": 1234.23
+                            "name": "percentageInCv", // Just example
+                            "type": "percent",
+                            "currency": null,
+                            "value": 50
                         }
                     ],
                     "eventDate": {
                         "timestamp": 1446046162,
                         "timezone": "Europe/Warsaw"
                     },
-                    "documentsNumber": 5
+                    "message": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko. Czlendż jaki jest, każdy widzi. Wypłaty przyszły. Na podwyżkę trzeba sobie zasłużyć! Wiem, że masz już dużo na głowie, ale mejle znowu padły, a Katarzyna jest na urlopie, także nie ma co łejtować.</p>
+                    <p>Obczaj, że mamy wszystkie konieczne apruwale, dlatego piłeczka jest teraz po ich stronie. Paulina jest na sik liwie. WTF? Odbierz ten fakin telefon! Spójrz na to z innej strony.</p>"
                 },
                 {
-                    "type": "Ownership",
-                    "status": "New",
+                    "type": "ownership",
+                    "subtype": "capitalcall", // Capital drawdown
+                    "status": "accepted", // Was "New" but as we decided to not sent when last time update was I'm not able to see if something is new
                     "date": {
                         "timestamp": 1446146162,
                         "timezone": "Europe/Warsaw"
                     },
-                    "subtype": "Capital drawdown",
-                    "title": "Title of the event",
+                    "name": "Title of the event",
                     "amounts": [
                         {
+                            "name": "distribution", // Just example, I think we should use everywhere codes as we gonna also make translation to other languages in future
+                            "type": "currency",
                             "currency": "$ USD",
                             "value": 1234.23
                         },
                         {
-                            "currency": "$ USD",
-                            "value": 1234.23
+                            "name": "percentageInCv", // Just example
+                            "type": "percent",
+                            "currency": null,
+                            "value": 50
                         }
                     ],
                     "payDate": {
@@ -66,94 +75,112 @@ Get all events.
                     "account": {
                         "iban": "NL62 10020 8900 0190 0000",
                         "swift": "VITEDERR488"
-                    }
+                    },
+                    // Message can be just null as well
+                    "message": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko. Czlendż jaki jest, każdy widzi. Wypłaty przyszły. Na podwyżkę trzeba sobie zasłużyć! Wiem, że masz już dużo na głowie, ale mejle znowu padły, a Katarzyna jest na urlopie, także nie ma co łejtować.</p>
+                    <p>Obczaj, że mamy wszystkie konieczne apruwale, dlatego piłeczka jest teraz po ich stronie. Paulina jest na sik liwie. WTF? Odbierz ten fakin telefon! Spójrz na to z innej strony.</p>"
                 },
                 {
-                    "type": "Ownership",
-                    "status": "Cancelled",
+                    "type": "ownership",
+                    "subtype": "valuation", // Performance update
+                    "status": "cancelled",
                     "date": {
                         "timestamp": 1446146162,
                         "timezone": "Europe/Warsaw"
                     },
-                    "subtype": "Performance update",
-                    "title": "Title of the event",
+                    "name": "Title of the event",
                     "amounts": [
                         {
+                            "name": "distribution", // Just example, I think we should use everywhere codes as we gonna also make translation to other languages in future
+                            "type": "currency",
                             "currency": "$ USD",
                             "value": 1234.23
                         },
                         {
-                            "currency": "$ USD",
-                            "value": 1234.23
+                            "name": "percentageInCv", // Just example
+                            "type": "percent",
+                            "currency": null,
+                            "value": 50
                         }
                     ],
                     "eventDate": {
                         "timestamp": 1446046162,
                         "timezone": "Europe/Warsaw"
-                    }
+                    },
+                    // Message can be just null as well
+                    "message": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko. Czlendż jaki jest, każdy widzi. Wypłaty przyszły. Na podwyżkę trzeba sobie zasłużyć! Wiem, że masz już dużo na głowie, ale mejle znowu padły, a Katarzyna jest na urlopie, także nie ma co łejtować.</p>
+                    <p>Obczaj, że mamy wszystkie konieczne apruwale, dlatego piłeczka jest teraz po ich stronie. Paulina jest na sik liwie. WTF? Odbierz ten fakin telefon! Spójrz na to z innej strony.</p>"
                 },
                 {
-                    "type": "Voting",
-                    "status": "Live",
+                    "type": "voting",
+                    "status": "live",
                     "date": {
                         "timestamp": 1446146162,
                         "timezone": "Europe/Warsaw"
                     },
-                    "title": "Title of the event",
-                    "eventDate": {
-                        "timestamp": 1446046162,
-                        "timezone": "Europe/Warsaw"
-                    },
-                    "label": "attend",
+                    "name": "Title of the event",
+                    "dates": [
+                        "eventDate": {
+                            "timestamp": 1446046162,
+                            "timezone": "Europe/Warsaw"
+                        },
+                        "openingDate": {
+                            "timestamp": 1446046162,
+                            "timezone": "Europe/Warsaw"
+                        },
+                        // Closing date is not always required
+                        "closingDate": {
+                            "timestamp": 1446046162,
+                            "timezone": "Europe/Warsaw"
+                        }
+                    ],
+                    "labels": [
+                        "attend",
+                        "proxyvoting"
+                    ],
                     "locationName": "HQs",
                     "address": [
                         "Herengracht 180",
                         "1016BR Amsterdam",
                         "Netherlands"
-                    ],
-                    "documentsNumber": 5
+                    ]
                 },
                 {
-                    "type": "Voting Results",
-                    "status": "Normal",
+                    "type": "reporting",
+                    "status": "accepted",
+                    "name": "Event title",
                     "date": {
                         "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
-                    },
-                    "title": "Resolution",
-                    "eventDate": {
-                        "timestamp": 1446046162,
                         "timezone": "Europe/Warsaw"
                     }
                 },
                 {
-                    "type": "Reporting",
-                    "status": "Normal",
-                    "date": {
-                        "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
-                    },
-                    "title": "Event title",
-                    "documentsNumber": 5
-                },
-                {
-                    "type": "Ownership",
-                    "status": "Normal",
-                    "date": {
-                        "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
-                    },
-                    "subtype": "Position",
-                    "title": "Your position has been changed"
-                },
-                {
                     "type": "Data Room",
-                    "status": "Normal",
+                    "status": "accepted",
                     "date": {
                         "timestamp": 1446146162,
                         "timezone": "Europe/Warsaw"
                     },
-                    "documentsNumber": 4
+                    "documents": [
+                        {
+                            "name": "Document",
+                            "url": "https://vitrius.co/documents/doc.png",
+                            "year": 2015,
+                            "tags": [
+                                "Tag 1",
+                                "Tag 2"
+                            ]
+                        },
+                        {
+                            "name": "Document",
+                            "url": "https://vitrius.co/documents/doc.png",
+                            "year": 2015,
+                            "tags": [
+                                "Tag 1",
+                                "Tag 2"
+                            ]
+                        }
+                    ]
                 }
             ],
             "errors": null
