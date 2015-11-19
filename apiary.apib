@@ -5,185 +5,224 @@ HOST: http://polls.apiblueprint.org/
 
 Vitrius API specification
 
-## Questions Collection [/events]
+## Feed [/feed]
 
-### List All Questions [GET]
+### List all investments and articles [GET]
 
-Get all events.
+Get application feed.
 
 + Response 200 (application/json)
 
         {
-            "data": [
-                {
+          "data": {
+            "investments": [
+              {
+                "id": 1,
+                "name": "Lamborghini",
+                "positionsNumber": 1,
+                "newEventsNumber": 2,
+                "invitation": {
+                  "id": 1,
+                  "date": "date",
+                  "additionalPositionsNumber:": 1
+                },
+                "events": [
+                  {
                     "type": "ownership",
                     "subtype": "distribution",
                     "status": "accepted",
                     "date": {
-                        "timestamp": 1446046162,
-                        "timezone": "Europe/Warsaw"
+                      "timestamp": 1446046162,
+                      "timezone": "Europe/Warsaw"
                     },
-                    "name": "Title of the event",
+                    "title": "Title of the event",
                     "amounts": [
-                        {
-                            "name": "distribution", // Just example, I think we should use everywhere codes as we gonna also make translation to other languages in future
-                            "type": "currency",
-                            "currency": "$ USD",
-                            "value": 1234.23
-                        },
-                        {
-                            "name": "percentageInCv", // Just example
-                            "type": "percent",
-                            "currency": null,
-                            "value": 50
-                        }
-                    ],
-                    "eventDate": {
-                        "timestamp": 1446046162,
-                        "timezone": "Europe/Warsaw"
-                    },
-                    "message": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko. Czlendż jaki jest, każdy widzi. Wypłaty przyszły. Na podwyżkę trzeba sobie zasłużyć! Wiem, że masz już dużo na głowie, ale mejle znowu padły, a Katarzyna jest na urlopie, także nie ma co łejtować.</p>
-                    <p>Obczaj, że mamy wszystkie konieczne apruwale, dlatego piłeczka jest teraz po ich stronie. Paulina jest na sik liwie. WTF? Odbierz ten fakin telefon! Spójrz na to z innej strony.</p>"
-                },
-                {
-                    "type": "ownership",
-                    "subtype": "capitalcall", // Capital drawdown
-                    "status": "accepted", // Was "New" but as we decided to not sent when last time update was I'm not able to see if something is new
-                    "date": {
-                        "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
-                    },
-                    "name": "Title of the event",
-                    "amounts": [
-                        {
-                            "name": "distribution", // Just example, I think we should use everywhere codes as we gonna also make translation to other languages in future
-                            "type": "currency",
-                            "currency": "$ USD",
-                            "value": 1234.23
-                        },
-                        {
-                            "name": "percentageInCv", // Just example
-                            "type": "percent",
-                            "currency": null,
-                            "value": 50
-                        }
+                      {
+                        "currency": "USD",
+                        "value": 1234.23
+                      },
+                      {
+                        "currency": "EUR",
+                        "value": 1034.23
+                      }
                     ],
                     "payDate": {
-                        "timestamp": 1446946162,
-                        "timezone": "Europe/Warsaw"
+                      "timestamp": 1446046162,
+                      "timezone": "Europe/Warsaw"
                     },
-                    "account": {
-                        "iban": "NL62 10020 8900 0190 0000",
-                        "swift": "VITEDERR488"
-                    },
-                    // Message can be just null as well
-                    "message": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko. Czlendż jaki jest, każdy widzi. Wypłaty przyszły. Na podwyżkę trzeba sobie zasłużyć! Wiem, że masz już dużo na głowie, ale mejle znowu padły, a Katarzyna jest na urlopie, także nie ma co łejtować.</p>
-                    <p>Obczaj, że mamy wszystkie konieczne apruwale, dlatego piłeczka jest teraz po ich stronie. Paulina jest na sik liwie. WTF? Odbierz ten fakin telefon! Spójrz na to z innej strony.</p>"
-                },
-                {
+                    "notes": "Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko."
+                  },
+                  {
                     "type": "ownership",
-                    "subtype": "valuation", // Performance update
+                    "subtype": "capitalcall",
+                    "status": "accepted",
+                    "date": {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "title": "Title of the event",
+                    "amounts": [
+                      {
+                        "currency": "USD",
+                        "value": 1234.23
+                      },
+                      {
+                        "currency": "EUR",
+                        "value": 1034.23
+                      }
+                    ],
+                    "payDate": {
+                      "timestamp": 1446046162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "notes": "Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko."
+                  },
+                  {
+                    "type": "ownership",
+                    "subtype": "valuation",
                     "status": "cancelled",
                     "date": {
-                        "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
                     },
-                    "name": "Title of the event",
-                    "amounts": [
-                        {
-                            "name": "distribution", // Just example, I think we should use everywhere codes as we gonna also make translation to other languages in future
-                            "type": "currency",
-                            "currency": "$ USD",
-                            "value": 1234.23
-                        },
-                        {
-                            "name": "percentageInCv", // Just example
-                            "type": "percent",
-                            "currency": null,
-                            "value": 50
-                        }
-                    ],
-                    "eventDate": {
-                        "timestamp": 1446046162,
-                        "timezone": "Europe/Warsaw"
-                    },
-                    // Message can be just null as well
-                    "message": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko. Czlendż jaki jest, każdy widzi. Wypłaty przyszły. Na podwyżkę trzeba sobie zasłużyć! Wiem, że masz już dużo na głowie, ale mejle znowu padły, a Katarzyna jest na urlopie, także nie ma co łejtować.</p>
-                    <p>Obczaj, że mamy wszystkie konieczne apruwale, dlatego piłeczka jest teraz po ich stronie. Paulina jest na sik liwie. WTF? Odbierz ten fakin telefon! Spójrz na to z innej strony.</p>"
-                },
-                {
+                    "title": "Title of the event"
+                  },
+                  {
                     "type": "voting",
                     "status": "live",
                     "date": {
-                        "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
                     },
-                    "name": "Title of the event",
-                    "dates": [
-                        "eventDate": {
-                            "timestamp": 1446046162,
-                            "timezone": "Europe/Warsaw"
-                        },
-                        "openingDate": {
-                            "timestamp": 1446046162,
-                            "timezone": "Europe/Warsaw"
-                        },
-                        // Closing date is not always required
-                        "closingDate": {
-                            "timestamp": 1446046162,
-                            "timezone": "Europe/Warsaw"
+                    "title": "Title of the event",
+                    "schedule": [
+                      {
+                        "name": "Meeting date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
                         }
+                      },
+                      {
+                        "name": "Opening date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      },
+                      {
+                        "name": "Closing date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      }
                     ],
                     "labels": [
-                        "attend",
-                        "proxyvoting"
+                      "attend",
+                      "proxyvoting"
                     ],
                     "locationName": "HQs",
                     "address": [
-                        "Herengracht 180",
-                        "1016BR Amsterdam",
-                        "Netherlands"
+                      "Herengracht 180",
+                      "1016BR Amsterdam",
+                      "Netherlands"
                     ]
-                },
-                {
+                  },
+                  {
                     "type": "reporting",
                     "status": "accepted",
-                    "name": "Event title",
                     "date": {
-                        "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
-                    }
-                },
-                {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "title": "Title of the event"
+                  },
+                  {
                     "type": "Data Room",
                     "status": "accepted",
                     "date": {
-                        "timestamp": 1446146162,
-                        "timezone": "Europe/Warsaw"
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
                     },
                     "documents": [
-                        {
-                            "name": "Document",
-                            "url": "https://vitrius.co/documents/doc.png",
-                            "year": 2015,
-                            "tags": [
-                                "Tag 1",
-                                "Tag 2"
-                            ]
-                        },
-                        {
-                            "name": "Document",
-                            "url": "https://vitrius.co/documents/doc.png",
-                            "year": 2015,
-                            "tags": [
-                                "Tag 1",
-                                "Tag 2"
-                            ]
-                        }
+                      {
+                        "name": "Document1",
+                        "url": "https://vitrius.co/documents/doc.png",
+                        "year": 2015,
+                        "tags": [
+                          "Tag 1",
+                          "Tag 2"
+                        ]
+                      },
+                      {
+                        "name": "Document2",
+                        "url": "https://vitrius.co/documents/doc.png",
+                        "year": 2015,
+                        "tags": [
+                          "Tag 2",
+                          "Tag 3"
+                        ]
+                      }
                     ]
-                }
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "name": "Starbucks",
+                "positionsNumber": 3,
+                "newEventsNumber": 1,
+                "invitation": null,
+                "events": []
+              },
+              {
+                "id": 3,
+                "name": "GreenTowers",
+                "positionsNumber": 2,
+                "newEventsNumber": 0,
+                "invitation": null,
+                "events": []
+              },
+              {
+                "id": 4,
+                "name": "MacLaren",
+                "positionsNumber": 0,
+                "newEventsNumber": 0,
+                "invitation": {
+                  "id": 2,
+                  "date": "date",
+                  "additionalPositionsNumber:": 1
+                },
+                "events": []
+              }
             ],
-            "errors": null
+            "articles": [
+              {
+                "investment": {
+                  "id": 1,
+                  "name": "Lamborghini"
+                },
+                "title": "Title of the first article",
+                "date": {
+                  "timestamp": 1446146162,
+                  "timezone": "Europe/Warsaw"
+                }
+              },
+              {
+                "investment": {
+                  "id": 2,
+                  "name": "Starbucks"
+                },
+                "title": "Title of the second article",
+                "date": {
+                  "timestamp": 1446146162,
+                  "timezone": "Europe/Warsaw"
+                }
+              }
+            ]
+          },
+          "errors": null
         }
 
 
@@ -199,4 +238,44 @@ Get all events.
             ]
         }
         
+
+## Article details [/articles/{id}]
+
++ Parameters
+    + id - article id
+
+### GET Article details [GET]
+
+Get article details.
+
++ Response 200 (application/json)
+
+        {
+          "data": {
+            "investment": {
+              "id": 1,
+              "name": "Lamborghini"
+            },
+            "title": "Title of the first article",
+            "date": {
+              "timestamp": 1446146162,
+              "timezone": "Europe/Warsaw"
+            },
+            "author": "John Smith",
+            "images": [
+              {
+                "width": 800,
+                "height": 450,
+                "url": "https://vitrius.co/images/doc.png"
+              },
+              {
+                "width": 800,
+                "height": 450,
+                "url": "https://vitrius.co/images/doc.png"
+              }
+            ],
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer egestas lacinia orci in pellentesque. Duis quam tortor, dictum at tincidunt vel, egestas eget tellus. Maecenas nibh orci, fermentum at rhoncus quis, consequat non sapien. Sed sit amet tempus mauris, auctor suscipit leo."
+          },
+          "errors": null
+        }
 
