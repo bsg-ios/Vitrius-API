@@ -280,3 +280,95 @@ Get article details.
           "errors": null
         }
 
+
+## Investment invitation acceptance [/invitationAcceptance/]
+
+### POST Investment invitation acceptance [POST]
+
++ Request (application/json)
+
+        {
+            "invitationId": 1
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "status_code": 200
+            },
+            "errors": null
+        }
+        
++ Response 400 (application/json) 
+
+        {
+            "data" : null,
+            "errors" : [
+                {
+                    "code" : 123,
+                    "message" : "Invalid parameters."
+                }
+            ]
+        }
+        
+## Application invitation sending [/appInvitation/]
+
+### POST Investment invitation sending [POST]
+
++ Request (application/json)
+
+        {
+            "email": "test@jojomobile.pl"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "status_code": 200
+            },
+            "errors": null
+        }
+        
++ Response 400 (application/json) 
+
+        {
+            "data" : null,
+            "errors" : [
+                {
+                    "code" : 123,
+                    "message" : "Invalid parameters."
+                }
+            ]
+        }
+## Event status change to "read" [/eventRead/]
+
+### POST Investment invitation set to read [GET]
+
++ Request (application/json)
+
+        {
+            "eventId": 1
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "status_code": 200
+            },
+            "errors": null
+        }
+
++ Response 400 (application/json) 
+
+        {
+            "data" : null,
+            "errors" : [
+                {
+                    "code" : 123,
+                    "message" : "Invalid parameters."
+                }
+            ]
+        }
