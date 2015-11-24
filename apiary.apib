@@ -344,12 +344,43 @@ Get article details.
         }
 ## Event status change to "read" [/eventRead/]
 
-### POST Investment invitation set to read [GET]
+### POST to change event status to "read" [POST]
 
 + Request (application/json)
 
         {
             "eventId": 1
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "status_code": 200
+            },
+            "errors": null
+        }
+
++ Response 400 (application/json) 
+
+        {
+            "data" : null,
+            "errors" : [
+                {
+                    "code" : 123,
+                    "message" : "Invalid parameters."
+                }
+            ]
+        }
+        
+## Token Autorization [/tokenAutorization/]
+
+### POST autorization token to autorize app [POST]
+
++ Request (application/json)
+
+        {
+            "token": 1234567890ABCDEFGHIJKMNOPRSTUWXYZ
         }
         
 + Response 200 (application/json)
