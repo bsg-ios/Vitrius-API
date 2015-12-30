@@ -202,7 +202,210 @@ Get application feed.
                 "positionsNumber": 2,
                 "newEventsNumber": 0,
                 "invitation": null,
-                "events": []
+                "events": [
+                  {
+                    "id": 7,
+                    "type": "ownership",
+                    "subtype": "distribution",
+                    "status": "read",
+                    "date": {
+                      "timestamp": 1446046162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "name": "Name of the event",
+                    "amounts": [
+                      {
+                        "currency": "USD",
+                        "value": 1234.23
+                      },
+                      {
+                        "currency": "EUR",
+                        "value": 1034.23
+                      }
+                    ],
+                    "payDate": {
+                      "timestamp": 1446046162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "notes": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko.</p>"
+                  },
+                  {
+                    "id": 8,
+                    "type": "ownership",
+                    "subtype": "capitalcall",
+                    "status": "read",
+                    "date": {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "name": "Name of the event",
+                    "amounts": [
+                      {
+                        "currency": "USD",
+                        "value": 1234.23
+                      },
+                      {
+                        "currency": "EUR",
+                        "value": 1034.23
+                      }
+                    ],
+                    "payDate": {
+                      "timestamp": 1446046162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "notes": "<p>Forwardnij mi ten raport. Mam dla ciebie gud edwajs – odpal sobie kotka na jutubie i od razu poczujesz, że możesz zrobić wszystko.</p>"
+                  },
+                  {
+                    "id": 9,  
+                    "type": "ownership",
+                    "subtype": "valuation",
+                    "status": "cancelled",
+                    "date": {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "name": "Name of the event",
+                    "amounts": [
+                      {
+                        "currency": "USD",
+                        "value": 1234.23
+                      },
+                      {
+                        "currency": "EUR",
+                        "value": 1034.23
+                      }
+                    ]
+                  },
+                  {
+                    "id": 10, 
+                    "type": "voting",
+                    "subtype": "meeting",
+                    "status": "read",
+                    "date": {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "isLive": true,
+                    "name": "Name of the event",
+                    "schedule": [
+                      {
+                        "name": "Meeting date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      },
+                      {
+                        "name": "Opening date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      },
+                      {
+                        "name": "Closing date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      }
+                    ],
+                    "labels": [
+                      "attend",
+                      "proxyvoting"
+                    ],
+                    "locationName": "HQs",
+                    "address": [
+                      "Herengracht 180",
+                      "1016BR Amsterdam",
+                      "Netherlands"
+                    ]
+                  },
+                  {
+                    "id": 11, 
+                    "type": "voting",
+                    "subtype": "nomeeting",
+                    "status": "read",
+                    "date": {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "isLive": true,
+                    "name": "Name of the event",
+                    "schedule": [
+                      {
+                        "name": "Meeting date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      },
+                      {
+                        "name": "Opening date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      },
+                      {
+                        "name": "Closing date",
+                        "date": {
+                          "timestamp": 1446046162,
+                          "timezone": "Europe/Warsaw"
+                        }
+                      }
+                    ],
+                    "labels": [
+                      "attend",
+                      "proxyvoting"
+                    ],
+                    "locationName": "HQs",
+                    "address": [
+                      "Herengracht 180",
+                      "1016BR Amsterdam",
+                      "Netherlands"
+                    ]
+                  },
+                  {
+                    "id": 12, 
+                    "type": "reporting",
+                    "status": "unread",
+                    "date": {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "name": "Name of the event"
+                  },
+                  {
+                    "id": 13,  new 
+                    "type": "data room",
+                    "status": "unread",
+                    "date": {
+                      "timestamp": 1446146162,
+                      "timezone": "Europe/Warsaw"
+                    },
+                    "documents": [
+                      {
+                        "name": "Document1",
+                        "url": "https://vitrius.co/documents/doc.png",
+                        "year": 2015,
+                        "tags": [
+                          "Tag 1",
+                          "Tag 2"
+                        ]
+                      },
+                      {
+                        "name": "Document2",
+                        "url": "https://vitrius.co/documents/doc.png",
+                        "year": 2015,
+                        "tags": [
+                          "Tag 2",
+                          "Tag 3"
+                        ]
+                      }
+                    ]
+                  }
+                }
               },
               {
                 "id": 4,
@@ -222,7 +425,7 @@ Get application feed.
             ],
             "articles": [
               {
-                "id" : 1,
+                "id" : 3,
                 "investment": {
                   "id": 1,
                   "name": "Lamborghini"
@@ -234,7 +437,7 @@ Get application feed.
                 }
               },
               {
-                "id" : 2,
+                "id" : 4,
                 "investment": {
                   "id": 2,
                   "name": "Starbucks"
