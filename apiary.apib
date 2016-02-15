@@ -616,7 +616,8 @@ Get article details.
 + Request (application/json)
 
         {
-            "eventId": 1
+            "eventId": 1,
+            "type": "voting"
         }
         
 + Response 200 (application/json)
@@ -657,6 +658,322 @@ Get article details.
                 "status_code": 200
             },
             "errors": null
+        }
+
++ Response 400 (application/json) 
+
+        {
+            "data" : null,
+            "errors" : [
+                {
+                    "code" : 123,
+                    "message" : "Invalid parameters."
+                }
+            ]
+        }
+        
+## Token Autorization [/votingResults/]
+
+### POST autorization token to autorize app [POST]
+
+        
++ Response 200 (application/json)
+
+        {
+            "0":{
+                "6":{
+                    "id":6,
+                    "bullet":"1",
+                    "subject":"Opening en notulen vorige vergadering",
+                    "votable":false,
+                    "infavor":0,
+                    "against":0,
+                    "abstain":0,
+                    "thresholdValue":0,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                },
+                "7":{
+                    "id":7,
+                    "bullet":"2",
+                    "subject":"Directieverslag",
+                    "votable":false,
+                    "infavor":0,
+                    "against":0,
+                    "abstain":0,
+                    "thresholdValue":0,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                 },
+                "8":{
+                    "id":8,
+                    "bullet":"3",
+                    "subject":"Verslag Raad van Toezicht",
+                    "votable":false,
+                    "infavor":0,
+                    "against":0,
+                    "abstain":0,
+                    "thresholdValue":0,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                },
+                "9":{
+                    "id":9,
+                    "bullet":"4",
+                    "subject":"Jaarcijfers 2013, decharge Directie",
+                    "votable":true,
+                    "position":"65",
+                    "infavor":2,
+                    "against":63,
+                    "abstain":0,
+                    "total":"16.0000",
+                    "thresholdValue":100,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                 },
+                "10":{
+                    "id":10,
+                    "bullet":"5",
+                    "subject":"Resultaatbestemming en besluit (interim) dividend",
+                    "votable":true,
+                    "position":"65",
+                    "infavor":5,
+                    "against":0,
+                    "abstain":1,
+                    "total":"0.0000",
+                    "thresholdValue":100,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                 },
+                "11":{
+                    "id":11,
+                    "bullet":"6",
+                    "subject":"Portfolio voortgangsrapport",
+                    "votable":false,
+                    "infavor":0,
+                    "against":0,
+                    "abstain":0,
+                    "thresholdValue":0,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                },
+                "12":{
+                    "id":12,
+                    "bullet":"7",
+                    "subject":"Wvttk",
+                    "votable":false,
+                    "infavor":0,
+                    "against":0,
+                    "abstain":0,
+                    "thresholdValue":0,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                },
+                "13":{
+                    "id":13,
+                    "bullet":"8",
+                    "subject":"Sluiting",
+                    "votable":false,
+                    "infavor":0,
+                    "against":0,
+                    "abstain":0,
+                    "thresholdValue":0,
+                    "shareFull":65,
+                    "shareFullNoMulti":65,
+                    "passed":false
+                }
+            },
+            "13":[
+                    {
+                        "id":6,
+                        "bullet":"1",
+                        "subject":"Opening en notulen vorige vergadering",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    },
+                    {
+                        "id":7,
+                        "bullet":"2",
+                        "subject":"Directieverslag",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    },
+                    {
+                        "id":8,
+                        "bullet":"3",
+                        "subject":"Verslag Raad van Toezicht",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    },
+                    {
+                        "id":9,
+                        "bullet":"4",
+                        "subject":"Jaarcijfers 2013, decharge Directie",
+                        "votable":true,
+                        "position":"65",
+                        "infavor":"0",
+                        "against":"16",
+                        "abstain":"0",
+                        "total":"16.0000",
+                        "thresholdValue":"50",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    },
+                    {
+                        "id":10,
+                        "bullet":"5",
+                        "subject":"Resultaatbestemming en besluit (interim) dividend",
+                        "votable":true,
+                        "position":"65",
+                        "infavor":"0",
+                        "against":"0",
+                        "abstain":"0",
+                        "total":"0.0000",
+                        "thresholdValue":"50",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    },
+                    {
+                        "id":11,
+                        "bullet":"6",
+                        "subject":"Portfolio voortgangsrapport",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    },
+                    {
+                        "id":12,
+                        "bullet":"7",
+                        "subject":"Wvttk",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    },
+                    {
+                        "id":13,
+                        "bullet":"8",
+                        "subject":"Sluiting",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"16.0000",
+                        "shareFullNoMulti":"16",
+                        "passed":false
+                    }
+                ],
+            "14":[
+                    {
+                        "id":6,
+                        "bullet":"1",
+                        "subject":"Opening en notulen vorige vergadering",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":false
+                    },
+                    {
+                        "id":7,
+                        "bullet":"2",
+                        "subject":"Directieverslag",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":false
+                    },
+                    {
+                        "id":8,
+                        "bullet":"3",
+                        "subject":"Verslag Raad van Toezicht",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":false
+                    },
+                    {
+                        "id":9,
+                        "bullet":"4",
+                        "subject":"Jaarcijfers 2013, decharge Directie",
+                        "votable":true,
+                        "position":"65",
+                        "infavor":"2",
+                        "against":"47",
+                        "abstain":"0",
+                        "total":"49.0000",
+                        "thresholdValue":"50",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":false
+                    },
+                    {
+                        "id":10,
+                        "bullet":"5",
+                        "subject":"Resultaatbestemming en besluit (interim) dividend",
+                        "votable":true,
+                        "position":"65",
+                        "infavor":"5",
+                        "against":"0",
+                        "abstain":"1",
+                        "total":"6.0000",
+                        "thresholdValue":"50",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":true
+                    },
+                    {
+                        "id":11,
+                        "bullet":"6",
+                        "subject":"Portfolio voortgangsrapport",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":false
+                    },
+                    {
+                        "id":12,
+                        "bullet":"7",
+                        "subject":"Wvttk",voting
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":false
+                    },
+                    {
+                        "id":13,
+                        "bullet":"8",
+                        "subject":"Sluiting",
+                        "votable":false,
+                        "thresholdValue":"",
+                        "shareFull":"49.0000",
+                        "shareFullNoMulti":"49",
+                        "passed":false
+                    }
+                ]
         }
 
 + Response 400 (application/json) 
